@@ -1,66 +1,37 @@
 <html>
-
-<head>
-
-//css
-
-<style>
-
-table
-
-{
-
-border-style:solid;
-
-border-width:2px;
-
-border-color:pink;
-
-}
-
-</style>
-
-</head>
-
-
+<head><title> Display.php </title></head>
+<body bgcolor="aabbcc">
 <?php
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-$link = mysqli_connect("mysql", "root", "password", "mydatabase");
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
- 
-// Attempt select query execution
-$sql = "SELECT * FROM WORKLOAD";
-if($result = mysqli_query($link, $sql)){
-    if(mysqli_num_rows($result) > 0){
-        echo "<table>";
-            echo "<tr>";
-                echo "<th>DATE</th>";
-                echo "<th>DATA</th>";
-            echo "</tr>";
-        while($row = mysqli_fetch_array($result)){
-            echo "<tr>";
-                echo "<td>" . $row['dt'] . "</td>";
-                echo "<td>" . $row['DATA'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        // Free result set
-        mysqli_free_result($result);
-    } else{
-        echo "No records matching your query were found.";
-    }
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-}
- 
-// Close connection
-mysqli_close($link);
-?>
-</body>
 
+
+define('DB_SERVER', 'mysql');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'password');
+define('DB_DATABASE', 'mydatabase'); //where customers is the database
+$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+
+
+$query="select * from WORKLOAD"; // Fetch all the records from the table address
+$result=mysqli_query($db,$query);
+?>
+
+<h3> Page to display the stored data </h3>
+
+<table border="1">
+<tr>
+<th> DATE </th>
+<th> DATA  </th>
+
+
+<?php while($array=mysqli_fetch_row($result)) ?>
+<tr>
+<td><?echo $array[0];?></td>
+<td><?echo $array[1];?></td>
+</tr>
+
+<?php endwhile; ?>
+<?php mysqli_free_result($result); ?>
+<?php mysqli_close($db); ?>
+</table>
+</body>
 </html>
