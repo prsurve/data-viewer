@@ -1,3 +1,28 @@
+<html>
+
+<head>
+
+//css
+
+<style>
+
+table
+
+{
+
+border-style:solid;
+
+border-width:2px;
+
+border-color:pink;
+
+}
+
+</style>
+
+</head>
+
+
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
@@ -36,3 +61,6 @@ if($result = mysqli_query($link, $sql)){
 // Close connection
 mysqli_close($link);
 ?>
+</body>
+
+</html>
