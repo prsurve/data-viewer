@@ -15,6 +15,7 @@
 		$qryStr		=	"SELECT * FROM WORKLOAD"; 
 		$workload_data	=	$db->query($qryStr);
 		$count		=	$workload_data->num_rows;
+		echo $workload_data->fetch_assoc()
 		
 		$pages = new Paginator($count,9);
 		echo '<div class="col-sm-6">';
