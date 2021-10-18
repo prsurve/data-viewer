@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	
+	<div class="container">
 	<?php
 	if(isset($_REQUEST['tb1'])) {
 		$condition		=	"";
