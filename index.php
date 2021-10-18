@@ -33,15 +33,12 @@
                             <td><?php echo $array[1];?></td>
                         </tr>
                 <?php
-            }
-        }?>
-                    <?php endwhile; ?>
-
-                <?php else: ?>
+                }
+                }else{?>
                     <tr>
                         <td colspan="3" rowspan="1" headers="">No Data Found</td>
                     </tr>
-                <?php endif; ?>
+                    <?php } ?>
 
                 <?php mysqli_free_result($result); ?>
 
