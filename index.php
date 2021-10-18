@@ -15,7 +15,10 @@
 		$qryStr		=	"SELECT * FROM WORKLOAD"; 
 		$workload_data	=	$db->query($qryStr);
 		$count		=	$workload_data->num_rows;
-		echo $workload_data->fetch_assoc();
+		echo $qryStr->fetch_assoc();
+		if(!$rownota = $workload_data->fetch_assoc()) {
+        		echo 'Fail';
+    		}
 		
 		$pages = new Paginator($count,9);
 		echo '<div class="col-sm-6">';
