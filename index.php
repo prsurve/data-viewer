@@ -9,7 +9,7 @@
 <body>
 	<div class="container">
 	<?php
-	if(isset($_REQUEST['tb1'])) {
+	
 		$condition		=	"";
 				
 		$qryStr		=	"SELECT * FROM WORKLOAD"; 
@@ -32,8 +32,9 @@
 		echo '<div class="clearfix"></div>';
 		$limit	= $pages->limit_start.','.$pages->limit_end;
 		$qry 	=	$db->query($qryStr.' LIMIT '.$limit);
-	}
+	
 	?>
+
 	<table class="table table-bordered table-striped table-hover">
 		<thead>
 			<tr class="bg-primary">
@@ -74,7 +75,7 @@
 		echo '<div class="clearfix"></div><hr>';
 		echo "<p class=\"code\">SELECT * FROM table LIMIT $pages->limit_start,$pages->limit_end (retrieve records $pages->limit_start-".($pages->limit_start+$pages->limit_end)." from table - $pages->total_items item total / $pages->items_per_page items per page)";
 	?>
-				
+			
 	</div> <!--/.container-->
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
