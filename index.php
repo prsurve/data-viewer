@@ -21,16 +21,20 @@
                 </thead>
                 <tbody>
                 <?php include 'retrieve-data.php'; ?>
-
-                <?php if ($result->num_rows > 0): ?>
-
-                    <?php while($array=mysqli_fetch_row($result)): ?>
+                <?php
+                    if($result->num_rows > 0){
+                        $n = 1;
+                while($array=mysqli_fetch_row($result)){
+                 ?>
 
                         <tr>
-                            <th scope="row"><?php echo $array[0];?></th>
+                            <th scope="row"><?php echo $n++; ?></th>
+                            <td><?php echo $array[0];?></td>
                             <td><?php echo $array[1];?></td>
                         </tr>
-
+                <?php 
+            }
+        }
                     <?php endwhile; ?>
 
                 <?php else: ?>
