@@ -32,9 +32,9 @@
                             <td><?php echo $array[0];?></td>
                             <td><?php echo $array[1];?></td>
                         </tr>
-                <?php 
+                <?php
             }
-        }
+        }?>
                     <?php endwhile; ?>
 
                 <?php else: ?>
