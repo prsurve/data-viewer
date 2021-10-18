@@ -14,6 +14,7 @@
 		$workload_data	=	$db->query($qryStr);
 		$count		=	$workload_data->num_rows;
 		echo $qryStr->fetch_assoc();
+        echo "test";
 		if(!$rownota = $workload_data->fetch_assoc()) {
         		echo 'Fail';
     		}
