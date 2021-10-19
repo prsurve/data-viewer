@@ -17,6 +17,7 @@
                     <th scope="col">#</th>
                     <th scope="col">DATE</th>
                     <th scope="col">DATA</th>
+                    <th scope="col">HOST</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                             <th scope="row"><?php echo $n++; ?></th>
                             <td><?php echo $array[0];?></td>
                             <td><?php echo $array[1];?></td>
+                            <td><?php echo $array[2];?></td>
                         </tr>
                 <?php
                 }
