@@ -23,19 +23,18 @@
                 <tbody>
                 <?php include 'retrieve-data.php'; ?>
                 <?php
-                    if($result->num_rows > 0){
-                        $n = 1;
                 while($array=mysqli_fetch_row($result)){
-                 ?>
+                ?>
 
                         <tr>
-                            <th scope="row"><?php echo $n++; ?></th>
-                            <td><?php echo $array[0];?></td>
+                            <th scope="row"><<?php echo $array[0];?></th>
                             <td><?php echo $array[1];?></td>
                             <td><?php echo $array[2];?></td>
+                            <td><?php echo $array[3];?></td>
                         </tr>
-                <?php
-                }
+               
+               <?php
+                } 
                 }else{?>
                     <tr>
                         <td colspan="3" rowspan="1" headers="">No Data Found</td>
