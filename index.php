@@ -51,8 +51,10 @@
         include 'config.php';
         $query="select DISTINCT HOST from WORKLOAD "; // Fetch all the data from the table customers
             $result=mysqli_query($db,$query);
-            $row = mysqli_fetch_array($result);
-            echo $row;
+            while($array=mysqli_fetch_row($result)) {
+                echo $array[0];
+                echo $array[1];
+            }
             ?>
 
 
