@@ -23,10 +23,10 @@
                 <tbody>
                 <?php include 'retrieve-data.php'; ?>
                 <?php
-                    if($result->num_rows > 0){
-                        $n = 1;
-                while($array=mysqli_fetch_row($result)){
-                 ?>
+                if($result->num_rows > 0){
+                    $n = 1;
+                    while($array=mysqli_fetch_row($result)){
+                        ?>
 
                         <tr>
                             <th scope="row"><?php echo $array[0];?></th>
@@ -34,19 +34,27 @@
                             <td><?php echo $array[2];?></td>
                             <td><?php echo $array[3];?></td>
                         </tr>
-                <?php
-                }
+                        <?php
+                    }
                 }else{?>
                     <tr>
                         <td colspan="3" rowspan="1" headers="">No Data Found</td>
                     </tr>
-                    <?php } ?>
+                <?php } ?>
 
                 <?php mysqli_free_result($result); ?>
 
                 </tbody>
             </table>
         </div>
+        <?php
+        include 'config.php';
+        $query="select DISTINCT HOST from WORKLOAD "; // Fetch all the data from the table customers
+            $result=mysqli_query($db,$query);
+            echo $result;
+            ?>
+
+
     </div>
 </div>
 
