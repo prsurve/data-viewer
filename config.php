@@ -1,8 +1,7 @@
 <?php
 define('DB_NAME', 'mydatabase');
 define('DB_USER', 'root');
-# define('DB_PASSWORD', $_ENV["DB_PASS"]);
-define('DB_PASSWORD', 'password');
+define('DB_PASSWORD', $_ENV["DB_PASS"]);
 define('DB_HOST', 'mysql');
 
 // Create connection
