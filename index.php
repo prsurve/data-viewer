@@ -9,7 +9,7 @@
 
 <div class="container mt-2">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-18">
 
             <table class="table">
                 <thead>
