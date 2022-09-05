@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Table Data</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 
-<div class="container mt-2">
+<div class="container mt-1">
     <div class="row">
-        <div class="col-md-18">
+        <div class="col-md-12">
 
             <table class="table">
                 <thead>
