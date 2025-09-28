@@ -1,19 +1,16 @@
 <?php
-require_once 'config.php'; // Your DB connection file
+include 'config.php'; // $dbHost, $dbUser, $dbPass, $dbName
 
-try {
-    $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Run query
+$sql = "SELECT host, COUNT(*) AS total_rows FROM WORKLOAD GROUP BY host ORDER BY total_rows DESC";
+$result = mysqli_query($conn, $sql);
 
-    // Query: Count rows grouped by host
-    $stmt = $pdo->query("SELECT host, COUNT(*) AS total_rows FROM WORKLOAD GROUP BY host ORDER BY total_rows DESC");
-
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    die("Database error: " . $e->getMessage());
+// Check for query errors
+if (!$result) {
+    die("Query error: " . mysqli_error($conn));
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,12 +45,17 @@ try {
             <th>Host</th>
             <th>Total Rows</th>
         </tr>
-        <?php foreach ($results as $row): ?>
+        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <tr>
                 <td><?php echo htmlspecialchars($row['host']); ?></td>
                 <td><?php echo number_format($row['total_rows']); ?></td>
             </tr>
-        <?php endforeach; ?>
+        <?php endwhile; ?>
     </table>
 </body>
 </html>
+
+<?php
+// Close connection
+mysqli_close($conn);
+?>
