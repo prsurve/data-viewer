@@ -73,11 +73,24 @@
             <option value="500">500</option>
         </select>
     </div>
+        <div style="background:#f5f5f5; padding:10px; text-align:center;">
+    <a href="host-summary.php" style="
+        padding: 8px 16px;
+        background: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+    ">
+        📊 View Data Written Per Host
+    </a>
+</div>
 
     <!-- Showing X to Y of Z entries (aligned to the left) -->
     <div id="data-info" class="text-sm text-gray-700 mb-4 pagination-info">
         Showing 1 to 10 of 100 entries
     </div>
+
 
     <!-- Loading Spinner -->
     <div id="loading-spinner" class="flex justify-center items-center mb-4" style="display: none;">
@@ -101,18 +114,7 @@
     <div id="pagination-controls" class="pagination-container mt-4">
         <!-- Pagination will be populated via AJAX -->
     </div>
-    <div style="background:#f5f5f5; padding:10px; text-align:center;">
-    <a href="host-summary.php" style="
-        padding: 8px 16px;
-        background: #007BFF;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: bold;
-    ">
-        📊 View Data Written Per Host
-    </a>
-</div>
+
 </div>
 
 <script>
