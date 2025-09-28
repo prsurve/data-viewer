@@ -207,6 +207,9 @@ $(document).ready(function() {
     loadData(1, 25); // Load page 1 with default limit 25
 });
 </script>
+<p style="text-align:center;">
+    <a href="host-summary.php">View Data Written Per Host</a>
+</p>
 
 </body>
 </html>
