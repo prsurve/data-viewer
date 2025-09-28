@@ -3,7 +3,7 @@ include 'config.php'; // $dbHost, $dbUser, $dbPass, $dbName
 
 // Run query
 $sql = "SELECT host, COUNT(*) AS total_rows FROM WORKLOAD GROUP BY host ORDER BY total_rows DESC";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($db, $sql);
 
 // Check for query errors
 if (!$result) {
