@@ -60,20 +60,7 @@
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
-<div style="text-align:center; margin: 20px;">
-    <a href="host-summary.php" style="
-        display:inline-block;
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    ">
-        View Data Written Per Host
-    </a>
-</div>
+
 
 <div class="container mx-auto py-6 px-4">
     <!-- Dropdown for Record Limit -->
@@ -114,6 +101,18 @@
     <div id="pagination-controls" class="pagination-container mt-4">
         <!-- Pagination will be populated via AJAX -->
     </div>
+    <div style="background:#f5f5f5; padding:10px; text-align:center;">
+    <a href="host-summary.php" style="
+        padding: 8px 16px;
+        background: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+    ">
+        📊 View Data Written Per Host
+    </a>
+</div>
 </div>
 
 <script>
@@ -221,19 +220,5 @@ $(document).ready(function() {
     loadData(1, 25); // Load page 1 with default limit 25
 });
 </script>
-<div style="background:#f5f5f5; padding:10px; text-align:center;">
-    <a href="host-summary.php" style="
-        padding: 8px 16px;
-        background: #007BFF;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: bold;
-    ">
-        📊 View Data Written Per Host
-    </a>
-</div>
-
-
 </body>
 </html>
