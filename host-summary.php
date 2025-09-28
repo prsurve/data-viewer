@@ -6,7 +6,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query: Count rows grouped by host
-    $stmt = $pdo->query("SELECT host, COUNT(*) AS total_rows FROM your_table_name GROUP BY host ORDER BY total_rows DESC");
+    $stmt = $pdo->query("SELECT host, COUNT(*) AS total_rows FROM WORKLOAD GROUP BY host ORDER BY total_rows DESC");
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
